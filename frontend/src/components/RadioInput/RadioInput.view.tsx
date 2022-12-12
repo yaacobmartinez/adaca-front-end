@@ -11,7 +11,7 @@ type RadioInputProps = {
 const RadioInput = (props: RadioInputProps) => {
   const { label, value, onSelect, checked = false, disabled = false } = props;
 
-  // TODO: something is wrong with the input's logic
+  // TODO: something is wrong with the input's logic --- OK
   return (
     <div className="radioInput" data-testid="radio-input-container">
       <label>
@@ -19,9 +19,9 @@ const RadioInput = (props: RadioInputProps) => {
           data-testid="radio-input-control"
           type="radio"
           value={value}
-          checked={disabled}
-          disabled={checked}
-          onChange={() => ''}
+          checked={checked}
+          disabled={disabled}
+          onChange={() => onSelect(value)}
         />
         {label}
       </label>
